@@ -38,11 +38,8 @@ func (a *App) GetAccount(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 
-		fmt.Println("account : ", account)
-
 		account_list := make([]Account, 0, 1)
 		account_list = append(account_list, account)
-		fmt.Println("account_list : ", account_list)
 		reqLogger.Info("Response data - ", account)
 		reqLogger.Info(a.Module, "_Success")
 		respondWithJSON(w, req, http.StatusOK, account_list)
